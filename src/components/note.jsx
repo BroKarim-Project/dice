@@ -47,7 +47,7 @@ export default function Note({ note, toggleComplete, handleDelete, handleEdit, o
 
   return (
     <>
-      <div className="mt-4 rounded-[1rem] shadow-md bg-white flex flex-col px-2 py-2">
+      <div className="mt-4 rounded-[1rem]  bg-white flex flex-col px-2 border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] py-2">
         {/* content */}
         <div  className="flex items-start flex-col gap-2 mb-2">
           <input style={{ textDecoration: note.completed && 'line-through' }} type="text" value={newTitle !== '' ? newTitle : note.title} onChange={handleChange} className="text-2xl bg-red-300 font-semibold" />

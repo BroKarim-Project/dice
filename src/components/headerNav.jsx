@@ -38,7 +38,7 @@ const HeaderNav = () => {
 
   return (
     <>
-      <nav className="bg-[#fff7e9] border-gray-200 ">
+      <nav className="bg-[#d0f4f0] border-gray-200 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="https://flowbite.com/" className="flex items-center">
             <svg className="w-[36px] h-[36px] text-blac " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
@@ -70,7 +70,7 @@ const HeaderNav = () => {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-black dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 border-2 border-black  shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500   dark:placeholder-black dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
             </div>
@@ -101,7 +101,7 @@ const HeaderNav = () => {
                 placeholder="Search..."
               />
             </div>
-            <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+            <div className="hidden border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] border-2 rounded-md w-full md:block md:w-auto" id="navbar-dropdown">
               <ul className="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:border-0 md:bg-white  dark:border-gray-700">
                 <li>
                   <a href="#" className="block py-2 pl-3 pr-4 text-black  rounded md:bg-transparent  md:p-0 md:dark:bg-transparent" aria-current="page">

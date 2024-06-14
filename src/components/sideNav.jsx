@@ -40,7 +40,7 @@ export default function SideNav({ openModal }) {
 
   return (
     <>
-      <div className="flex h-screen w-16 flex-col border-e bg-white pt-4">
+      <div className="flex h-screen w-16 flex-col border-r-2 border-black bg-[#d2d2d2] pt-4">
         <div className="inline-flex h-16 w-16 items-center justify-center" style={{ marginBottom: 20 }}>
           <span className="grid h-10 w-10 place-content-center  text-lg font-semibold text-black">Dice</span>
         </div>
@@ -49,10 +49,10 @@ export default function SideNav({ openModal }) {
             <Plus color="#fff" />
           </button>
         </div>
-        <div className={`border-t border-gray-100 transition-all duration-300 ${isMenuExpanded ? 'h-auto' : 'h-0'} overflow-hidden`}>
+        <div className={`border-t border-black transition-all duration-300 ${isMenuExpanded ? 'h-auto' : 'h-0'} overflow-hidden`}>
           <div className="px-2">
             <div className="py-4">
-              <ul className="space-y-1 border-t border-gray-100 pt-4">
+              <ul className="space-y-1  pt-4">
                 {colors.map((color, index) => (
                   <li key={index}>
                     <button className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700" onClick={() => handleColorClick()}>
