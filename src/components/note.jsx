@@ -10,10 +10,40 @@ export default function Note({ note, toggleComplete, handleDelete, handleEdit, o
   const [radioColor, setRadioColor] = useState(null);
   const [newTitle, setNewTitle] = React.useState(note.title);
   const [newContent, setNewContent] = useState(note.content);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
   const [showTools, setShowTools] = useState(false);
 
   const [content, setContent] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+
+  const colorOptions = [
+    {
+      id: 1,
+      label: 'yellow',
+      value: '#FFC976',
+    },
+    {
+      id: 2,
+      label: 'orange',
+      value: '#FE9C75',
+    },
+    {
+      id: 3,
+      label: 'purple',
+      value: '#B693F8',
+    },
+    {
+      id: 4,
+      label: 'blue',
+      value: '#03C2E6',
+    },
+    {
+      id: 5,
+      label: 'green',
+      value: '#C0CA7B',
+    },
+  ];
 
   const tools = [
     {
@@ -47,11 +77,17 @@ export default function Note({ note, toggleComplete, handleDelete, handleEdit, o
 
   return (
     <>
-      <div className="mt-4 rounded-[1rem]  bg-white flex flex-col px-2 border-2 border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] py-2">
+      <div className="mt-4 rounded-[1rem] min-h-[200px] shadow-md  flex flex-col justify-between px-2 py-2" style={{ backgroundColor: note.color }}>
         {/* content */}
-        <div  className="flex items-start flex-col gap-2 mb-2">
-          <input style={{ textDecoration: note.completed && 'line-through' }} type="text" value={newTitle !== '' ? newTitle : note.title} onChange={handleChange} className="text-2xl bg-red-300 font-semibold" />
-          <input value={newContent} className="text-lg" />
+        <div className="flex items-start flex-col h-full gap-2 mb-2">
+          <input style={{ textDecoration: note.completed && 'line-through' }} type="text" value={newTitle !== '' ? newTitle : note.title} onChange={handleChange} className="text-2xl  bg-transparent  font-semibold" />
+          <textarea
+            value={newContent}
+            className="text-lg flex-1 text-start  w-full pr-2 border-none outline-none  resize-none bg-transparent focus:ring-0"
+            style={{ overflow: isClicked ? 'auto' : 'hidden' }}
+            onClick={() => setIsClicked(true)}
+            onMouseLeave={() => setIsClicked(false)}
+          />
         </div>
 
         <div className="flex items-center gap-2 ">
@@ -59,7 +95,7 @@ export default function Note({ note, toggleComplete, handleDelete, handleEdit, o
             <Pencil size={15} color="#fff" />
           </button>
           {showTools && (
-            <ul className=" border-t flex justify-end w-full items-center  border-gray-100 ">
+            <ul className="  flex justify-end w-full items-center   ">
               {tools.map((tool, index) => (
                 <li key={index}>
                   <button className={tool.className} onClick={tool.onClick}>

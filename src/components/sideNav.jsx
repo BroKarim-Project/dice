@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 
-export default function SideNav({ openModal }) {
+export default function SideNav({ openModal, setSelectedColor }) {
   const [isMenuExpanded, setMenuExpanded] = useState(false);
 
   const colors = [
@@ -32,15 +32,15 @@ export default function SideNav({ openModal }) {
     e.prevenDefault();
   };
 
-  const handleColorClick = () => {
-    // setSelectedColor(color.hashcode);
-    // console.log('handleColorClick selectedColor: ', color.name);
+  const handleColorClick = (color) => {
+    setSelectedColor(color.hashcode);
+    console.log('handleColorClick selectedColor: ', color.name);
     openModal();
   };
 
   return (
     <>
-      <div className="flex h-screen w-16 flex-col border-r-2 border-black bg-[#d2d2d2] pt-4">
+      <div className="flex h-screen w-16 flex-col border-r border-gray-200 bg-white pt-4">
         <div className="inline-flex h-16 w-16 items-center justify-center" style={{ marginBottom: 20 }}>
           <span className="grid h-10 w-10 place-content-center  text-lg font-semibold text-black">Dice</span>
         </div>
@@ -52,10 +52,10 @@ export default function SideNav({ openModal }) {
         <div className={`border-t border-black transition-all duration-300 ${isMenuExpanded ? 'h-auto' : 'h-0'} overflow-hidden`}>
           <div className="px-2">
             <div className="py-4">
-              <ul className="space-y-1  pt-4">
+              <ul className="space-y-1 pt-4">
                 {colors.map((color, index) => (
                   <li key={index}>
-                    <button className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700" onClick={() => handleColorClick()}>
+                    <button className="group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700" onClick={() => handleColorClick(color)}>
                       <div
                         className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-xs text-gray-600"
                         style={{

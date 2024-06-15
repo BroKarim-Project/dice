@@ -38,23 +38,13 @@ const HeaderNav = () => {
 
   return (
     <>
-      <nav className="bg-[#d0f4f0] border-gray-200 ">
+      <nav className="bg-[#fff7e9] border-gray-200 ">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a href="https://flowbite.com/" className="flex items-center">
-            <svg className="w-[36px] h-[36px] text-blac " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-              <path d="M12.687 14.408a3.01 3.01 0 0 1-1.533.821l-3.566.713a3 3 0 0 1-3.53-3.53l.713-3.566a3.01 3.01 0 0 1 .821-1.533L10.905 2H2.167A2.169 2.169 0 0 0 0 4.167v11.666A2.169 2.169 0 0 0 2.167 18h11.666A2.169 2.169 0 0 0 16 15.833V11.1l-3.313 3.308Zm5.53-9.065.546-.546a2.518 2.518 0 0 0 0-3.56 2.576 2.576 0 0 0-3.559 0l-.547.547 3.56 3.56Z" />
-              <path d="M13.243 3.2 7.359 9.081a.5.5 0 0 0-.136.256L6.51 12.9a.5.5 0 0 0 .59.59l3.566-.713a.5.5 0 0 0 .255-.136L16.8 6.757 13.243 3.2Z" />
-            </svg>
+          <a className="flex items-center">
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">Notes</span>
           </a>
           <div className="flex md:order-2">
-            <button
-              type="button"
-              data-collapse-toggle="navbar-search"
-              aria-controls="navbar-search"
-              aria-expanded="false"
-              className="md:hidden text-black  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 mr-1"
-            >
+            <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-black  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 mr-1">
               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
               </svg>
@@ -70,7 +60,7 @@ const HeaderNav = () => {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border-2 border-black  shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500   dark:placeholder-black dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 borde-none rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500   dark:placeholder-black dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
             </div>
@@ -97,12 +87,12 @@ const HeaderNav = () => {
               <input
                 type="text"
                 id="search-navbar"
-                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search..."
               />
             </div>
-            <div className="hidden border-black shadow-[2px_2px_0px_rgba(0,0,0,1)] border-2 rounded-md w-full md:block md:w-auto" id="navbar-dropdown">
-              <ul className="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:border-0 md:bg-white  dark:border-gray-700">
+            <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+              <ul className="flex flex-col font-medium p-4 mt-4 border border-gray-200 rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:border-0 ">
                 <li>
                   <a href="#" className="block py-2 pl-3 pr-4 text-black  rounded md:bg-transparent  md:p-0 md:dark:bg-transparent" aria-current="page">
                     Home
@@ -179,10 +169,7 @@ const HeaderNav = () => {
                 </li>
 
                 <li>
-                  <a
-                    href="#"
-                    className="block py-2 pl-3 pr-4  md:p-0 text-black hover:text-gray-400"
-                  >
+                  <a href="#" className="block py-2 pl-3 pr-4  md:p-0 text-black hover:text-gray-400">
                     Archive
                   </a>
                 </li>

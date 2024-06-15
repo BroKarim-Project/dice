@@ -3,7 +3,7 @@ import { db } from '../firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { X } from 'lucide-react';
 
-export default function AddTodo({ onClose }) {
+export default function AddTodo({ onClose, selectedColor, }) {
   const colorOptions = [
     {
       id: 1,
@@ -42,6 +42,7 @@ export default function AddTodo({ onClose }) {
       await addDoc(collection(db, 'todos'), {
         title,
         content,
+        color: selectedColor,
         completed: false,
       });
       setTitle('');
@@ -53,7 +54,7 @@ export default function AddTodo({ onClose }) {
   };
 
   return (
-    <div className="flex fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto overflow-x-hidden max-w-[500px] bg-white  justify-center items-center" id="noteModal">
+    <div className="flex fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto overflow-x-hidden max-w-[500px]   justify-center items-center" style={{ backgroundColor: selectedColor }} id="noteModal">
       <div className="relative p-4 w-full max-w-2xl">
         <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5">
           <h3 className="text-lg font-semibold text-gray-900">Create Note</h3>

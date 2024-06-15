@@ -21,6 +21,7 @@ function App() {
   const [notes, setNotes] = React.useState([]);
   // const [selectedColor, setSelectedColor] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedColor, setSelectedColor] = useState('#FFFFFF');
 
   const openModal = () => {
     console.log('Opening Modal');
@@ -82,19 +83,19 @@ function App() {
     <>
       <main className="flex ">
         <div className="flex">
-          <SideNav openModal={openModal} />
+          <SideNav setSelectedColor={setSelectedColor} openModal={openModal} />
         </div>
         <div className="relative">
           {/* <Title /> */}
           {/* <AddTodo onClose={closeModal} /> */}
-          {isModalOpen && <AddTodo onClose={closeModal} />}
+          {isModalOpen && <AddTodo selectedColor={selectedColor} onClose={closeModal} />}
         </div>
 
         <div className="flex-1 ">
           <HeaderNav />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
             {notes.map((note) => (
-              <Note key={note.id} note={note} toggleComplete={toggleComplete} handleDelete={handleDelete} handleEdit={handleEdit} />
+              <Note key={note.id} note={note} selectedColor={selectedColor} toggleComplete={toggleComplete} handleDelete={handleDelete} handleEdit={handleEdit} />
             ))}
           </div>
         </div>
